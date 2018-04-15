@@ -1,6 +1,6 @@
 ### python-scripts
 
 - first_helloworld.py
-Maintance - Print hello world in console
+maintenance - Print hello world in console
 - forloop1.py
-Maintance - Array of index, forloop and if and else condition covered.
+maintenance - Array of index, forloop and if and else condition covered.
