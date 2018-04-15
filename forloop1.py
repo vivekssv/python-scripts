@@ -2,13 +2,16 @@
 #############################################################################################
 #Maintance - Array of index, forloop and if and else condition covered.                     #
 #############################################################################################
-computer_brands = ["Apple", "Asus", "Dell", "Samsung"]
+computer_brands = ["Apple", "Asus", "Dell", "Samsung", "redmi"]
+computer_rates = ["300$", "100$", "250$", "90$"]
 for brands in computer_brands:
     if brands == 'Asus':
-        print ("" + brands + "Tek Computer Inc. is a Taiwanese multinational computer") 
+        print ("" + brands + "Tek Computer Inc. laptop rates {}".format(computer_rates[1])) 
     elif brands == 'Apple':
-        print ("" + brands + " is an American multinational technology company headquartered in Cupertino")
+        print ("" + brands + " laptop rates {}".format(computer_rates[0]))
     elif brands == 'Dell':
-        print ("" + brands + " is an American multinational computer technology company based in Round Rock")
+        print ("" + brands + " laptop rates {}".format(computer_rates[2]))
+    elif brands == 'Samsung':
+        print ( "" + brands + " laptop rates {}".format(computer_rates[3])) 
     else:
-        print ( "" + brands + " is a South Korean multinational conglomerate...")
+        print ("The {} doesn't have laptop versions".format(brands))
