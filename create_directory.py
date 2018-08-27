@@ -5,9 +5,9 @@ def createdirectory(folder):
     try:
         if not os.path.exists(folder):
             os.makedirs(folder)
-            print ('Creating directory sucess ' + folder)
+            print ('INFO: Creating directory sucess ' + folder)
     except OSError:
-        print ('Error creating the folder' + folder)
+        print ('ERROR: Creating the folder' + folder)
 #-------------------------------------#
 createdirectory('master_dir')
 #-------------------------------------#
