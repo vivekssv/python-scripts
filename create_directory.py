@@ -1,11 +1,10 @@
 import os
-
 #-----------Function------------------#
 def createdirectory(folder):
     try:
         if not os.path.exists(folder):
             os.makedirs(folder)
-            print ('INFO: Creating directory sucess ' + folder)
+            print ('INFO: Creating directory success ' + folder)
     except OSError:
         print ('ERROR: Creating the folder' + folder)
 #-------------------------------------#
