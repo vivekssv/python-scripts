@@ -8,15 +8,19 @@
 
 
 def is_leap(year):
+    leap = False
     div = (year%4)
     div400 = (year%400)
     div100 = (year%100)
-    if div400 == 0:
-      leap = True
-    elif div100 == 0:
-      leap = False
-    elif div == 0:
-      leap = True
+    try:
+      if div400 == 0:
+        leap = True
+      elif div100 == 0:
+        leap = False
+      elif div == 0:
+        leap = True
+    except OSError:
+      print ("ERROR: Provide valid date to check leap year.")  
     return leap
 year = int(input())
 print(is_leap(year))
