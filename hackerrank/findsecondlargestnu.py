@@ -32,9 +32,11 @@ if __name__ == '__main__':
     #print (max(arr))
     value = max(arr)  # u will get high value
     framenewlist = list()
-    
+        
     for i in range(len(arr)):
         if value != arr[i]:
             framenewlist.append(arr[i])
+        else:
+            print ("This is greatest number {} in the entire list of inputs".format(value))
     final = max(framenewlist)
     print (final)
