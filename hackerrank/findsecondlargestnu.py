@@ -27,8 +27,9 @@
 #
 #...
 if __name__ == '__main__':
-    n = int(input())
-    arr = list(map(int, input().split()))
+    #n = int(input())
+    arr = list(map(int, input().split())) # passing set of number with space separeted 
+    #print (max(arr))
     value = max(arr)  # u will get high value
     framenewlist = list()
     
