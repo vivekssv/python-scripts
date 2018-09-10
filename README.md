@@ -8,3 +8,19 @@ maintenance - Array of index, forloop and if and else condition covered.
 maintenance - Functions with input parms handle & handled format with multiple arugs in print
 - create_directory.py
 maintenance - creating the master directory and creating the child directory with array of objs
+- variables_structure.py
+maintenance - types of variable assignments
+- dictionary.py
+maintenance - collection of list how can proceed with it
+
+### Docker images handle
+- docker search newimages
+- docker pull imagename
+- docker run -it imagename /bin/bash
+    run to activate 
+    it - interactive session
+    imagename - docker image
+    /bin/bash (linux) or cmd (windows)
+- docker ps
+    will show current process
+    (-a) will show all history
