@@ -12,6 +12,8 @@ maintenance - creating the master directory and creating the child directory wit
 maintenance - types of variable assignments
 - dictionary.py
 maintenance - collection of list how can proceed with it
+- dictionary_json.py
+maintenance - collection of json input to iterate into the python Dictionary 
 
 ### Docker images handle
 - docker search newimages
