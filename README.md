@@ -26,3 +26,5 @@ maintenance - collection of json input to iterate into the python Dictionary
 - docker ps
     will show current process
     (-a) will show all history
+- docker exec 5dcfbe74e100container_id /usr/local/tomcat/bin/catalina.sh run
+- docker run --rm -it -p 8443:8080 tomcat:latest
