@@ -30,15 +30,15 @@ import sys
 import json
 from httplib2 import HTTPConnectionWithTimeout
 from urllib.request import urlopen
-print ("Please provide the column with value to display the reslut, column_a, column_b EX:")
+print ("Please provide the column with value to display the result, column_a, column_b EX:")
 column_number = input(str())
-print (column_number)
+#print (column_number)
 github_jsondate = "https://raw.githubusercontent.com/vinothsundararajan/python-scripts/master/jsonheaders/sample_num.json"
 jsongit = urlopen(github_jsondate)
 jsonoutput = jsongit.read()
 gitjson = json.loads(jsonoutput)
 try:
-    print (gitjson)
+    #print (gitjson)
     for i in gitjson:
         print ("{} = ".format(column_number), i[column_number])
 except TypeError:
