@@ -14,6 +14,8 @@ maintenance - types of variable assignments
 maintenance - collection of list how can proceed with it
 - dictionary_json.py
 maintenance - collection of json input to iterate into the python Dictionary 
+- basics.py
+maintenance - collection classes and objects with references
 
 ### Docker images handle
 - docker search newimages
