@@ -19,7 +19,7 @@ node {
             steps {
                 echo 'Copying..'
                 sh du -sh
-                sh cp * /c/vinoth/TomcatServer/"New Folder"/
+                sh cp * /c/Vinoth/TomcatServer/"New Folder"/
             }
         }
         stage('Deploy') {
