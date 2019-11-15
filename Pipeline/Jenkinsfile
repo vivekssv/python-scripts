@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 node {
     def GIT_URL = "https://github.com/vinothsundararajan/python-scripts.git"
-    def BUILD_NUMBER = "C:\\Vinoth\\TomcatServer\\New folder"
+    def BUILD_NUMBER
     def GITHUB_PROJ = "C:\\Vinoth\\Python\\PYTHON_PROJ"
     def VERSION
     def TOTAL_COUNT = 6
