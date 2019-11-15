@@ -2,23 +2,27 @@
 node {
     def GIT_URL = "https://github.com/vinothsundararajan/python-scripts.git"
     def BUILD_PATH = "C:\\Vinoth\\TomcatServer\\New folder"
+
     properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', numToKeepStr: '10')), disableConcurrentBuilds(), pipelineTriggers([])])
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-                sh """
-                    git clone -b master $GIT_URL ./Github_Project
-                    pushd ./Github_Project
-                    git pull --tags
-                    echo "Clone done"
-                """
-            }
+    
+    stage ('Checkout') {
+        deleteDir()
+        checkout scm
+    }
+
+    stage('Build') {
+        steps {
+            echo 'Building..'
+            sh """
+                git clone -b master $GIT_URL ./Github_Project
+                pushd ./Github_Project
+                git pull --tags
+                echo "Clone done"
+            """
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
+    stage('Deploy') {
+        steps {
+            echo 'Deploying....'
         }
     }
 }
