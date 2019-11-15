@@ -1,23 +1,28 @@
 #!/usr/bin/env groovy
 node {
     def GIT_URL = "https://github.com/vinothsundararajan/python-scripts.git"
-    def BUILD_PATH = "C:\\Vinoth\\TomcatServer\\New folder"
-    def GITHUB_PROJ = "C:\\Vinoth\\python\\PYTHON_PROJ"
+    def BUILD_NUMBER = "C:\\Vinoth\\TomcatServer\\New folder"
+    def GITHUB_PROJ = "C:\\Vinoth\\Python\\PYTHON_PROJ"
+    def VERSION
+    def TOTAL_COUNT = 6
 
     properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', numToKeepStr: '10')), disableConcurrentBuilds(), pipelineTriggers([])])
     
     stage('Checkout') {
         deleteDir()
         checkout scm
+        VERSION = 1.0
     }
     stage('Build') {
         echo 'Building..'
         bat """
-            git clone -b master $GIT_URL $GITHUB_PROJ  
-            cd $GITHUB_PROJ
-            git pull --tags
-            echo "Clone done"
+            #rmdir $GITHUB_PROJ_${VERSION}_${BUILD_NUMBER} && echo "Successfully removed %GITHUB_PROJ%"
+            git clone -b master $GIT_URL $GITHUB_PROJ_${VERSION}_${BUILD_NUMBER}
+            cd ${GITHUB_PROJ}_${VERSION}_${BUILD_NUMBER}
+            git pull origin master --tags
+            echo "Python-scripts Clone done"
         """
+        sh "rm `ls -dt '${GITHUB_PROJ}_'* | tail -n +'${TOTAL_COUNT}'` -rf"
     }
     stage('Deploy') {
         echo 'Deploying....'
