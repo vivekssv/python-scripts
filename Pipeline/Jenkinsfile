@@ -15,13 +15,6 @@ node {
                 """
             }
         }
-        stage('copying') {
-            steps {
-                echo 'Copying..'
-                sh du -sh
-                sh cp * /c/Vinoth/TomcatServer/"New Folder"/
-            }
-        }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
