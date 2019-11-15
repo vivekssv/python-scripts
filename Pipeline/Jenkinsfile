@@ -6,22 +6,20 @@ node {
 
     properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', numToKeepStr: '10')), disableConcurrentBuilds(), pipelineTriggers([])])
     
-    stages {
-        stage('Checkout') {
-            deleteDir()
-            checkout scm
-        }
-        stage('Build') {
-            echo 'Building..'
-            bat """
-                git clone -b master $GIT_URL $GITHUB_PROJ  
-                cd $GITHUB_PROJ
-                git pull --tags
-                echo "Clone done"
-            """
-        }
-        stage('Deploy') {
-            echo 'Deploying....'
-        }
+    stage('Checkout') {
+        deleteDir()
+        checkout scm
+    }
+    stage('Build') {
+        echo 'Building..'
+        bat """
+            git clone -b master $GIT_URL $GITHUB_PROJ  
+            cd $GITHUB_PROJ
+            git pull --tags
+            echo "Clone done"
+        """
+    }
+    stage('Deploy') {
+        echo 'Deploying....'
     }
 }
