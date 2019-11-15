@@ -9,7 +9,6 @@ node {
         deleteDir()
         checkout scm
     }
-
     stage('Build') {
         steps {
             echo 'Building..'
@@ -20,6 +19,7 @@ node {
                 echo "Clone done"
             """
         }
+    }
     stage('Deploy') {
         steps {
             echo 'Deploying....'
