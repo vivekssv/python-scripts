@@ -2,7 +2,7 @@
 node {
     def GIT_URL = "https://github.com/vinothsundararajan/python-scripts.git"
     def BUILD_PATH = "C:\\Vinoth\\TomcatServer\\New folder"
-    def GITHUB_PROJ = "C:\\Vinoth\\PYTHON_PROJ"
+    def GITHUB_PROJ = "C:\\Vinoth\\python\\PYTHON_PROJ"
 
     properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', numToKeepStr: '10')), disableConcurrentBuilds(), pipelineTriggers([])])
     
