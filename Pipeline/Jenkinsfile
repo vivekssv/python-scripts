@@ -5,24 +5,20 @@ node {
 
     properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', numToKeepStr: '10')), disableConcurrentBuilds(), pipelineTriggers([])])
     
-    stage ('Checkout') {
+    stage('Checkout') {
         deleteDir()
         checkout scm
     }
     stage('Build') {
-        steps {
-            echo 'Building..'
-            sh """
-                git clone -b master $GIT_URL ./Github_Project
-                pushd ./Github_Project
-                git pull --tags
-                echo "Clone done"
-            """
-        }
+        echo 'Building..'
+        sh """
+            git clone -b master $GIT_URL ./Github_Project
+            pushd ./Github_Project
+            git pull --tags
+            echo "Clone done"
+        """
     }
     stage('Deploy') {
-        steps {
-            echo 'Deploying....'
-        }
+        echo 'Deploying....'
     }
 }
