@@ -1,12 +1,11 @@
 #!/usr/bin/env groovy
-/*  VINOTH Created script for python scripts         */
+/*  VINOTH created script for python scripts         */
 /*  VINOTH Added this into jenkins pipeline          */
 /*  VINOTH Added auto directory delete feature       */
-/*  VINOTH Corrected BUILD ID due to env issue       */
 node {
     def GIT_URL = "https://github.com/vinothsundararajan/python-scripts.git"
     def BUILD_NUMBER 
-    def GITHUB_PROJ = "C:\\Vinoth\\Python\\PYTHON_PROJ"
+    def GITHUB_PROJ = "C:\\Vinoth\\Python\\GitHub"
     def VERSION = 1.0
     def TOTAL_COUNT = 6
 
@@ -19,9 +18,10 @@ node {
     stage('Build') {
         echo 'Building..'
         bat """
-            cd ${GITHUB_PROJ}
+            if not exist "%GITHUB_PROJ%" mkdir %GITHUB_PROJ}%
+            cd ${GITHUB_PROJ};
             git clone -b master ${GIT_URL} ${VERSION}_%BUILD_NUMBER%
-            cd ${VERSION}_%{BUILD_NUMBER}%
+            cd ${VERSION}_%BUILD_NUMBER%
             git pull origin master --tags
             echo "Python-scripts Clone done"
             @echo off
@@ -34,4 +34,3 @@ node {
         echo 'Deploying....'
     }
 }
-
