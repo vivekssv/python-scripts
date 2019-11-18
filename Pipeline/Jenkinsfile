@@ -14,7 +14,6 @@ node {
     stage('Checkout') {
         deleteDir()
         checkout scm
-        VERSION = 1.0
     }
     stage('Build') {
         echo 'Building..'
