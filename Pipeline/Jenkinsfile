@@ -1,9 +1,12 @@
 #!/usr/bin/env groovy
+/*  VINOTH created script for python scripts         */
+/*  VINOTH Added this into jenkins pipeline          */
+/*  VINOTH Added auto directory delete feature       */
 node {
     def GIT_URL = "https://github.com/vinothsundararajan/python-scripts.git"
     def BUILD_NUMBER 
     def GITHUB_PROJ = "C:\\Vinoth\\Python\\PYTHON_PROJ"
-    def VERSION
+    def VERSION = 1.0
     def TOTAL_COUNT = 6
 
     properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', numToKeepStr: '10')), disableConcurrentBuilds(), pipelineTriggers([])])
@@ -16,13 +19,17 @@ node {
     stage('Build') {
         echo 'Building..'
         bat """
-            #rmdir $GITHUB_PROJ_${VERSION}_${BUILD_NUMBER} && echo "Successfully removed %GITHUB_PROJ%"
-            git clone -b master $GIT_URL $GITHUB_PROJ_${VERSION}_${BUILD_NUMBER}
-            cd ${GITHUB_PROJ}_${VERSION}_${BUILD_NUMBER}
+            cd ${GITHUB_PROJ};
+            git clone -b master $GIT_URL $VERSION_$BUILD_NUMBER
+            cd ${VERSION}_${BUILD_NUMBER}
             git pull origin master --tags
             echo "Python-scripts Clone done"
+            @echo off
+            for /f "skip=5 delims=" %%a in ('dir /b /o-d /ad') do echo rd /s /q "%%a"
+            for /f "skip=5 delims=" %%a in ('dir /b /o-d /ad') do rd /s /q "%%a"
+            pause
+            cd ..
         """
-        sh "rm `ls -dt '${GITHUB_PROJ}_'* | tail -n +'${TOTAL_COUNT}'` -rf"
     }
     stage('Deploy') {
         echo 'Deploying....'
