@@ -19,7 +19,7 @@ node {
         echo 'Building..'
         bat """
             mkdir %GITHUB_PROJ%
-            cd %GITHUB_PROJ%
+            cd $GITHUB_PROJ
             git clone -b master ${GIT_URL} ${VERSION}_%BUILD_NUMBER%
             cd ${VERSION}_%BUILD_NUMBER%
             git pull origin master --tags
