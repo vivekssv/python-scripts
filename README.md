@@ -1,25 +1,28 @@
 ### python-scripts
 
 - first_helloworld.py
-maintenance - Print hello world in console
+maintenance - Print hello world in console.
 - forloop1.py
 maintenance - Array of index, forloop and if and else condition covered.
 - functions.py
-maintenance - Functions with input parms handle & handled format with multiple arugs in print
+maintenance - Functions with input parms handle & handled format with multiple arugs in print.
 - create_directory.py
-maintenance - creating the master directory and creating the child directory with array of objs
+maintenance - creating the master directory and creating the child directory with array of objs.
 - variables_structure.py
-maintenance - types of variable assignments
+maintenance - types of variable assignments.
 - dictionary.py
-maintenance - collection of list how can proceed with it
+maintenance - collection of list how can proceed with it.
 - dictionary_json.py
-maintenance - collection of json input to iterate into the python Dictionary 
+maintenance - collection of json input to iterate into the python dictionary.
 - basics.py
-maintenance - collection classes and objects with references
+maintenance - collection classes and objects with references.
 - jenkinsfile
 maintenance - wrote jenkins files to automate in and out of creating build opertion using GITHUB jenkins job.
 - reminder.py
 maintenance - wrote reminder python program from "https://www.geeksforgeeks.org/birthday-reminder-application-python/" to test windows10toaster and looking to integrate email option.
+- pipeline/jenkinsfile
+maintenance - wrote task based reminder python program from reminder.py to test task based work on basics of every minute.
+- taskreminder.py
 
 ### Docker images handle
 - docker search newimages
