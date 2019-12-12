@@ -16,6 +16,10 @@ maintenance - collection of list how can proceed with it
 maintenance - collection of json input to iterate into the python Dictionary 
 - basics.py
 maintenance - collection classes and objects with references
+- jenkinsfile
+maintenance - wrote jenkins files to automate in and out of creating build opertion using GITHUB jenkins job.
+- reminder.py
+maintenance - wrote reminder python program from "https://www.geeksforgeeks.org/birthday-reminder-application-python/" to test windows10toaster and looking to integrate email option.
 
 ### Docker images handle
 - docker search newimages
