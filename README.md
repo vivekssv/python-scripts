@@ -35,5 +35,5 @@ maintenance - wrote task based reminder python program from reminder.py to test 
 - docker ps
     will show current process
     (-a) will show all history
-- docker exec 5dcfbe74e100container_id /usr/local/tomcat/bin/catalina.sh run
+- docker exec 5dcfbe74e100 container_id /usr/local/tomcat/bin/catalina.sh run
 - docker run --rm -it -p 8443:8080 tomcat:latest
